@@ -3,9 +3,15 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
-
-    pass
+    prod = []
+    val = 1
+    for i in range(0, len(arr)):
+        for x in range(0, len(arr)):
+            if i != x:
+                val *= arr[x]
+        prod.append(val)
+        val = 1
+    return prod
 
 
 if __name__ == '__main__':
