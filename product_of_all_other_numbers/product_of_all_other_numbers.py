@@ -1,17 +1,29 @@
 '''
 Input: a List of integers
 Returns: a List of integers
-'''
+# '''
+# def product_of_all_other_numbers(arr):
+#     prod = []
+#     val = 1
+#     for i in range(0, len(arr)):
+#         for x in range(0, len(arr)):
+#             if i != x:
+#                 val *= arr[x]
+#         prod.append(val)
+#         val = 1
+#     return prod
+
+
+
+
+import math
+# optimized solution:
 def product_of_all_other_numbers(arr):
-    prod = []
-    val = 1
-    for i in range(0, len(arr)):
-        for x in range(0, len(arr)):
-            if i != x:
-                val *= arr[x]
-        prod.append(val)
-        val = 1
-    return prod
+    arr1 = [0] * len(arr)
+    for i in range(len(arr)):
+        arr1[i] = math.prod(list(arr[:i] + arr[i+1]))
+    return arr1
+
 
 
 if __name__ == '__main__':
