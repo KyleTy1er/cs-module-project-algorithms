@@ -5,13 +5,13 @@ Returns: a List of integers
 
 
 def sliding_window_max(nums, k):
-    max_val = [0] * (len(nums)-k+1)
+    win = [0] * (len(nums)-k+1)
     for i in range(len(nums)-k+1):
-        max_val[i] = nums[i]
+        win[i] = nums[i]
         for x in range(i+1, i+k):
-            if max_val[i] < nums[x]:
-                max_val[i] = nums[x]
-    return max_val
+            if win[i] < nums[x]:
+                win[i] = nums[x]
+    return win
 
 
 if __name__ == '__main__':
